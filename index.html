@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunting API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=tag" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <!-- Navbar -->
+        <div class="navbar">
+            <h2>Hot Gadgets</h2>
+            <button>SIGN UP</button>
+        </div>
+        
+        <!-- Heading -->
+        <div class="head">
+            <h1>Apple Iphone 13 Pro Max</h1>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                have suffered alteration in some form, by injected humou.</p>
+                <button>BUY NOW</button>
+        </div>
+        
+        <!-- Phone Images -->
+        <div class="images">
+            <img src="https://tasmim-tahsin.github.io/PhoneHuntingAPI/images/pngwing%202.png" alt="image1">
+            <img src="https://tasmim-tahsin.github.io/PhoneHuntingAPI/images/pngwing%201.png" alt="image2">
+            <img src="https://tasmim-tahsin.github.io/PhoneHuntingAPI/images/pngwing%202.png" alt="image3">
+        </div>
+        
+        <!-- Search Box
+        <div class="search">
+            <h1>Search Your Phone</h1>
+            <div class="search2">
+                <input type="text" name="" placeholder="e.g Oppo, Samsung, Iphone" id="searchField">
+                <button id="search_input" onclick="searchHandler()">SEARCH</button>
+            </div>
+        </div>
+
+         
+        <div class="mobile">
+            
+            <div class="phones">
+                <div class="img">
+                 <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg" alt="img1">
+                </div>
+                <div class="ph_Details">
+                 <h2>iPhone 13 mini</h2>
+                 <p>There are many variations of passages of available, but the majority have suffered</p>
+                 <button class="btn" id="btn_show"> SHOW DETAILS</button>
+                </div>
+              </div>
+
+              
+            <div class="phones">
+                <div class="img">
+                 <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg" alt="img1">
+                </div>
+                <div class="ph_Details">
+                 <h2>iPhone 13 Pro</h2>
+                 <p>There are many variations of passages of available, but the majority have suffered</p>
+                 <button class="btn" id="btn_show" onclick="showBtn()">SHOW DETAILS</button>
+                </div>
+              </div>
+
+             
+            <div class="phones">
+                <div class="img">
+                 <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg" alt="img1">
+                </div>
+                <div class="ph_Details">
+                 <h2>iPhone 13 Pro Max</h2>
+                 <p>There are many variations of passages of available, but the majority have suffered</p>
+                 <button class="btn" id="btn_show"> SHOW DETAILS</button>
+                </div>
+              </div>
+
+             
+            <div class="phones">
+                <div class="img">
+                 <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg" alt="img1">
+                </div>
+                <div class="ph_Details">
+                 <h2>iPhone 13 </h2>
+                 <p>There are many variations of passages of available, but the majority have suffered</p>
+                 <button class="btn" id="btn_show">SHOW DETAILS</button>
+                </div>
+              </div>
+
+             
+            <div class="phones">
+                <div class="img">
+                 <img src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a13-5g-.jpg" alt="img1">
+                </div>
+                <div class="ph_Details">
+                 <h2>Galaxy A13 5G</h2>
+                 <p>There are many variations of passages of available, but the majority have suffered</p>
+                 <button class="btn" id="btn_show">SHOW DETAILS</button>
+                </div>
+              </div>
+        </div> -->
+
+
+        <main>
+            <!-- search btn -->
+            <section class="searchBtn">
+              <input
+                id="searchField"
+                type="text"
+                placeholder="e.g. oppo, samsung, iphone"
+              />
+              <button onclick="searchHandler()" >
+                Search
+              </button>
+            
+            </section>
+            <!-- phone card -->
+            <section>
+              <div  id="loading">
+                <span class="loading loading-ring loading-lg"></span>
+              </div>
+      
+              <div
+                id="phone-container"
+              ></div>
+            </section>
+            <div  id="showALLBtn">
+              <button onclick="showBtn()">Show All</button>
+            </div>
+      
+            <!-- Modals -->
+            <section>
+              <!-- Open the modal using ID.showModal() method -->
+              <dialog id="my_modal" class="modal">
+                <form method="dialog" class="modal-box text-center">
+                  <div id="imgContainer"></div>
+                  <h3 id="detailsPhoneName"></h3>
+                  <h3 id="detailsBrand" ></h3>
+                  <p id="detailsSpec"></p>
+                  <p id="releaseDate"></p>
+      
+                  <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="closebtn ">Close</button>
+                  </div>
+                </form>
+              </dialog>
+            </section>
+          </main>
+          
+        <!-- Footer -->
+        <div class="footer">
+            <span class="material-symbols-outlined" style="font-size: 50px; font-weight: 900;">tag</span>
+            <p class="p1">Hot Gadgets BD <br>
+                Providing reliable tech items since 1992</p>
+                <p class="p2">Copyright © 2023 - All right reserved</p>
+                <div class="icons">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+        </div>
+        
+    </div>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
